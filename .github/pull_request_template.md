@@ -6,10 +6,6 @@
 
 <!-- Describe the changes introduced by this pull request. Explain the purpose and the problem it solves. -->
 
-## Code Screenshots
-
-<!-- If applicable, include screenshots or code snippets that highlight the changes. -->
-
 ## Checklist
 
 - [ ] Run locally successfully?
