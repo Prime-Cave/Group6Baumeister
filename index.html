@@ -14,22 +14,76 @@
   </head>
   <script>
     const loadComponents = (id, url) => {
-      fetch(url)
+      return fetch(url)
         .then((response) => response.text())
         .then((html) => {
           document.getElementById(id).innerHTML = html;
         });
     };
 
+    // Function to initialize the menu
+    const initializeMenu = () => {
+      const openButton = document.getElementById('open');
+      const closeButton = document.getElementById('close');
+      const menuItems = document.getElementById('menuItems');
+
+      if (openButton && closeButton && menuItems) {
+        console.log('Menu elements found and initialized');
+
+        function openMenu() {
+          openButton.classList.add('hidden');
+          closeButton.classList.remove('hidden');
+          menuItems.classList.remove('hidden');
+        }
+
+        function closeMenu() {
+          closeButton.classList.add('hidden');
+          openButton.classList.remove('hidden');
+          menuItems.classList.add('hidden');
+        }
+
+        openButton.addEventListener('click', openMenu);
+        closeButton.addEventListener('click', closeMenu);
+      } else {
+        console.error('Menu elements not found:', {
+          openButton,
+          closeButton,
+          menuItems,
+        });
+      }
+    };
+
+    const checkWindowWidthAndInitialize = () => {
+      if (window.innerWidth < 1024) {
+        initializeMenu();
+      } else {
+        console.log('yes');
+        const openButton = document.getElementById('open');
+        const closeButton = document.getElementById('close');
+        const menuItems = document.getElementById('menuItemes');
+
+        if (openButton && closeButton && menuItems) {
+          closeButton.classList.add('hidden');
+          openButton.classList.remove('hidden');
+          menuItems.classList.add('hidden');
+        }
+      }
+    };
+
     window.onload = () => {
-      loadComponents('header', 'src/sections/header.html');
+      loadComponents('header', 'src/sections/header.html').then(() => {
+        checkWindowWidthAndInitialize();
+      });
+
       loadComponents('hero', 'src/sections/hero.html');
       loadComponents('contact', 'src/sections/contact.html');
       loadComponents('footer', 'src/sections/footer.html');
     };
+
+    // Add event listener for window resize to check window width dynamically
+    window.addEventListener('resize', checkWindowWidthAndInitialize);
   </script>
   <body>
-    <!-- <h1 class="text-red-800">Hello bro</h1> -->
     <div id="header"></div>
     <div id="hero"></div>
     <div id="contact"></div>
