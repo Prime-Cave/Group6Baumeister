@@ -1,4 +1,44 @@
-<div>
-    <h1 class="text-blue-800">Header</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quibusdam.</p>
-</div>
+<section id="header" class="px-3 lg:py-5 py-11 relative lg:px-10">
+  <div class="flex justify-between items-center lg:items-start">
+    <div>
+      <p class="lg:text-2xl text-[0.938rem] font-normal text-black">DE</p>
+      <p class="lg:text-2xl text-[0.938rem] font-normal text-black">EN</p>
+    </div>
+
+    <div class="font-semibold text-[2.2rem] lg:text-5xl lg:self-center">
+      Baumeister
+    </div>
+    <div class="lg:hidden">
+      <img
+        id="open"
+        src="../../images/menuOpen.png"
+        class="border-none"
+        alt="openMenu"
+      />
+      <img
+        id="close"
+        src="../../images/closeMenu.png"
+        class="border-none hidden"
+        alt="closeMenu"
+      />
+    </div>
+
+    <div class="hidden lg:block">
+      <ul>
+        <li class="text-2xl">About</li>
+        <li class="text-2xl">Services</li>
+        <li class="text-2xl">References</li>
+        <li class="text-2xl">Contact</li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="menuItems" class="absolute top-40 z-50 hidden w-full">
+    <ul class="flex items-center flex-col gap-10 w-full mx-[-50px]">
+      <li class="text-[#00672E] text-[2rem] font-semibold">About</li>
+      <li class="text-[#00672E] text-[2rem] font-semibold">Services</li>
+      <li class="text-[#00672E] text-[2rem] font-semibold">References</li>
+      <li class="text-[#00672E] text-[2rem] font-semibold">Contact</li>
+    </ul>
+  </div>
+</section>
