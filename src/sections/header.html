@@ -1,13 +1,19 @@
-<section id="header" class="px-3 lg:py-5 py-11 relative lg:px-10">
+<section
+  id="header"
+  class="px-3 lg:py-5 py-11 lg:px-10 fixed left-0 top-0 right-0 z-50"
+>
   <div class="flex justify-between items-center lg:items-start">
     <div>
-      <p class="lg:text-2xl text-[0.938rem] font-normal text-black">DE</p>
-      <p class="lg:text-2xl text-[0.938rem] font-normal text-black">EN</p>
+      <p class="lg:text-2xl text-sm md:text-xl">DE</p>
+      <p class="lg:text-2xl text-sm md:text-xl">EN</p>
     </div>
 
-    <div class="font-semibold text-[2.2rem] lg:text-5xl lg:self-center">
+    <a
+      href="#home"
+      class="block font-semibold text-3xl md:text-4xl lg:text-5xl lg:self-center"
+    >
       Baumeister
-    </div>
+    </a>
     <div class="lg:hidden">
       <img
         id="open"
@@ -23,22 +29,24 @@
       />
     </div>
 
-    <div class="hidden lg:block">
-      <ul>
-        <li class="text-2xl">About</li>
-        <li class="text-2xl">Services</li>
-        <li class="text-2xl">References</li>
-        <li class="text-2xl">Contact</li>
+    <nav class="hidden lg:block">
+      <ul class="text-2xl">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#references">References</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
-    </div>
+    </nav>
   </div>
 
-  <div id="menuItems" class="absolute top-40 z-50 hidden w-full">
-    <ul class="flex items-center flex-col gap-10 w-full mx-[-50px]">
-      <li class="text-[#00672E] text-[2rem] font-semibold">About</li>
-      <li class="text-[#00672E] text-[2rem] font-semibold">Services</li>
-      <li class="text-[#00672E] text-[2rem] font-semibold">References</li>
-      <li class="text-[#00672E] text-[2rem] font-semibold">Contact</li>
+  <nav id="menuItems" class="absolute top-40 z-50 hidden w-full">
+    <ul
+      class="flex items-center flex-col gap-10 w-full mx-[-50px] text-primary text-4xl font-semibold"
+    >
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#references">References</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
-  </div>
+  </nav>
 </section>
