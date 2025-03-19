@@ -45,16 +45,19 @@
     };
 
     const checkWindowWidthAndInitialize = () => {
-      if (window.innerWidth < 1024) {
-        initializeMenu();
-      } else {
-        const openButton = document.getElementById('open');
-        const closeButton = document.getElementById('close');
-        const menuItems = document.getElementById('menuItemes');
+      const openButton = document.getElementById('open');
+      const closeButton = document.getElementById('close');
+      const menuItems = document.getElementById('menuItems');
 
-        if (openButton && closeButton && menuItems) {
-          closeButton.classList.add('hidden');
+      if (openButton && closeButton && menuItems) {
+        if (window.innerWidth < 1024) {
+          initializeMenu();
           openButton.classList.remove('hidden');
+          closeButton.classList.add('hidden');
+          menuItems.classList.add('hidden');
+        } else {
+          openButton.classList.add('hidden');
+          closeButton.classList.add('hidden');
           menuItems.classList.add('hidden');
         }
       }
@@ -66,21 +69,17 @@
       });
 
       loadComponents('hero', 'src/sections/hero.html');
-      loadComponents('header', 'src/sections/header.html');
       loadComponents('about', 'src/sections/about.html');
       loadComponents('services', 'src/sections/services.html');
-      loadComponents('vector', 'src/sections/vector.html');
       loadComponents('references', 'src/sections/references.html');
       loadComponents('footer', 'src/sections/footer.html');
     };
-
     window.addEventListener('resize', checkWindowWidthAndInitialize);
   </script>
-  <body>
-    <div id="header"></div>
-    <div id="hero"></div>
-    <div id="about"></div>
-    <div class="sticky top-0" id="vector"></div>
+  <body class="relative">
+    <div id="header" class="sticky top-0 z-50"></div>
+    <div id="hero" class="mt-64"></div>
+    <div id="about" class="mt-36"></div>
     <div id="services"></div>
     <div id="references"></div>
     <div id="footer"></div>
