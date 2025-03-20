@@ -3,6 +3,8 @@
 @tailwind utilities;
 
 body {
+  max-width: 100dvw;
+  overflow-x: hidden;
   font-family: 'Outfit', sans-serif;
   background-color: #efecea;
 }
