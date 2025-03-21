@@ -1,8 +1,16 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: ["./src/**/*.{html,js}"],
+export default {
+  content: ['./src/**/*.{html,js}', './*.html'],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        headerVector: "url('/images/vector5.png')",
+      },
+      colors: {
+        primary: '#00672E',
+        mainBg: '#efecea',
+      },
+    },
   },
   plugins: [],
-}
+};
