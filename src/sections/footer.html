@@ -1,14 +1,15 @@
 <footer
-  class="flex flex-col items-center justify-center gap-16 pt-40 mt-10"
+  class="px-5 md:px-8 flex flex-col items-center justify-center gap-16 lg:gap-56 pt-10 pb-10 mt-10"
   id="contact"
 >
-  <div class="place-content-center">
+  <div class="place-content-center w-[80%] lg:w-auto">
     <img src="/images/Vector 7.svg" />
   </div>
-
-  <div class="flex flex-col gap-8 w-full lg:flex-row h-auto justify-evenly">
+  <div
+    class="flex flex-col gap-8 w-full lg:flex-row h-auto justify-evenly lg:justify-between lg:text-2xl"
+  >
     <ul
-      class="flex flex-col gap-8 w-full md:flex-row md:justify-between lg:justify-around"
+      class="flex flex-col gap-8 w-full md:flex-row md:justify-between lg:justify-start lg:gap-52"
     >
       <li>
         <p>Agentur Baumeister</p>
@@ -17,15 +18,20 @@
       </li>
       <li>
         <p class="underline">hallo@agentur-baumeister.com</p>
-        <p>+49 (0)30 - 490 827 87</p>
+        <p class="text-right lg:text-left">+49 (0)30 - 490 827 87</p>
       </li>
     </ul>
 
-    <ul class="flex w-full justify-around">
-      <li>LinkedIn</li>
-      <li>Instagram</li>
-      <li>Impressum</li>
-      <li>Datenschutz</li>
+    <ul class="flex w-full justify-between">
+      <li class="order-3 md:order-1">LinkedIn</li>
+      <li class="order-4 md:order-2">Instagram</li>
+      <li class="order-2 md:order-3 lg:hidden">Impressum</li>
+      <li class="order-1 md:order-4 lg:hidden">Datenschutz</li>
+
+      <div class="order-3 hidden lg:block">
+        <li class="text-right">Impressum</li>
+        <li class="text-right">Datenschutz</li>
+      </div>
     </ul>
   </div>
 </footer>
