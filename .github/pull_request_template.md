@@ -1,16 +1,26 @@
-## Feature Name
+### What does this PR do?
 
-<!-- Please provide the name of the feature or a brief title for the pull request. -->
+- Describe what you worked on, briefly (In one sentence)
 
-## Description
+### Description of the PR?
 
-<!-- Describe the changes introduced by this pull request. Explain the purpose and the problem it solves. -->
+- Describe your work in detail to clarify the context
 
-## Checklist
+### Any background context you want to provide?
 
-- [ ] Run locally successfully?
-- [ ] Meets the code guidelines mentioned in the Notion?
-- [ ] Adheres to the Git flow and contribution guidelines?
-- [ ] Contains descriptive commit messages?
-- [ ] Simulates 90% of the Figma style?
-- [ ] creating a pull request to the dev branch not the main branch
+- Note that you should send the request with a valid auth bearer token
+- request body
+  `{ taskName: "Reading" }`
+- N/A if not available
+
+### What are the relevant Trello cards?
+
+- Link to my [implemented Trello story]()
+
+### Screenshots (if appropriate)
+
+- Upload the screenshot if available or N/A if not available
+
+### How to test?
+
+- Give hints on how someone might easily test the feature
