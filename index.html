@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" href="./dist/output.css" />
-    <title>Website project template</title>
+    <title>Baumeister Website</title>
   </head>
   <script>
     const loadComponents = (id, url) => {
@@ -20,18 +20,24 @@
       const openButton = document.getElementById('open');
       const closeButton = document.getElementById('close');
       const menuItems = document.getElementById('menuItems');
+      const hero = document.getElementById('hero');
+      const heroText = document.getElementById('hero-text');
 
-      if (openButton && closeButton && menuItems) {
+      if (openButton && closeButton && menuItems && hero && heroText) {
         function openMenu() {
           openButton.classList.add('hidden');
           closeButton.classList.remove('hidden');
           menuItems.classList.remove('hidden');
+          hero.classList.add('mt-52');
+          heroText.classList.add('hidden');
         }
 
         function closeMenu() {
           closeButton.classList.add('hidden');
           openButton.classList.remove('hidden');
           menuItems.classList.add('hidden');
+          hero.classList.remove('mt-52');
+          heroText.classList.remove('hidden');
         }
 
         openButton.addEventListener('click', openMenu);
@@ -69,9 +75,10 @@
       loadComponents('references', 'src/sections/references.html');
       loadComponents('footer', 'src/sections/footer.html');
     };
+
     window.addEventListener('resize', checkWindowWidthAndInitialize);
   </script>
-  <body class="relative font-outfit bg-mainBg w-screen overflow-x-hidden">
+  <body class="relative font-outfit bg-secondary w-screen overflow-x-hidden">
     <div id="header" class="sticky top-0 z-50"></div>
     <div id="hero"></div>
     <div id="about" class="mt-20"></div>
