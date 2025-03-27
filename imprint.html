@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/dist/output.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Website project template</title>
+  </head>
+  <script>
+    const loadComponents = (id, url) => {
+      return fetch(url)
+        .then((response) => response.text())
+        .then((html) => {
+          document.getElementById(id).innerHTML = html;
+        });
+    };
+
+    const initializeMenu = () => {
+      const openButton = document.getElementById('open');
+      const closeButton = document.getElementById('close');
+      const menuItems = document.getElementById('menuItems');
+
+      if (openButton && closeButton && menuItems) {
+        function openMenu() {
+          openButton.classList.add('hidden');
+          closeButton.classList.remove('hidden');
+          menuItems.classList.remove('hidden');
+        }
+
+        function closeMenu() {
+          closeButton.classList.add('hidden');
+          openButton.classList.remove('hidden');
+          menuItems.classList.add('hidden');
+        }
+
+        openButton.addEventListener('click', openMenu);
+        closeButton.addEventListener('click', closeMenu);
+      }
+    };
+
+    const checkWindowWidthAndInitialize = () => {
+      const openButton = document.getElementById('open');
+      const closeButton = document.getElementById('close');
+      const menuItems = document.getElementById('menuItems');
+
+      if (openButton && closeButton && menuItems) {
+        if (window.innerWidth < 1024) {
+          initializeMenu();
+          openButton.classList.remove('hidden');
+          closeButton.classList.add('hidden');
+          menuItems.classList.add('hidden');
+        } else {
+          openButton.classList.add('hidden');
+          closeButton.classList.add('hidden');
+          menuItems.classList.add('hidden');
+        }
+      }
+    };
+
+    window.onload = () => {
+      loadComponents('header', 'src/sections/header.html').then(() => {
+        checkWindowWidthAndInitialize();
+      });
+
+      loadComponents('hero', 'src/sections/hero.html');
+      loadComponents('about', 'src/sections/about.html');
+      loadComponents('services', 'src/sections/services.html');
+      loadComponents('references', 'src/sections/references.html');
+      loadComponents('footer', 'src/sections/footer.html');
+    };
+    window.addEventListener('resize', checkWindowWidthAndInitialize);
+  </script>
+  <body class="relative">
+    <div id="header" class="sticky top-0 z-50 text-primary"></div>    
+    <!--imprint container-->
+    <div class="pt-10 flex flex-col md:flex-row lg:flex-row mx-5 md:mx-10 lg:mx-40 xl:mx-40 xl:40 text-primary border-4 border-red-400">
+        <!--left card-->
+        <div class="flex flex-col flex-1 text-left gap-4 md:gap-16 text-xl md:text-2xl lg:text-4xl">
+            <p class="flex flex-col">
+                <span class="block md:hidden lg:hidden font-bold md:text-2xl">IMPRINT</span></br>
+                <span class="hidden md:block lg:block font-bold md:text-2xl">IMPRESSUM</span></br>
+                <span class="font-bold">Agentur Baumeister</span></br>
+                Katrein Baumeister</br>
+                Böckhstraße 13</br>
+                10967 Berlin
+            </p>
+            
+            <p>
+                +49 (0)30 - 490 827 87</br>
+                hallo@agentur-baumeister.com
+            </p>
+               
+            <p>
+                <span class="font-bold">UST-IDNR.</span></br>
+                DE 274 486 923
+            </p>
+               
+            <p>
+                <span class="font-bold">REGISTERED OFFICE</span></br>
+                Berlin, Deutschland
+            </p>
+        </div>
+
+        <!--right card-->
+        <div class="flex-1 flex-col text-left md:text-right place-content-end">            
+            <p class="flex flex-col text-xl gap-2 pt-16">
+                <span class="font-bold">DISCLAIMER</span></br>
+                Despite all due care, no liability can be accepted for the accuracy, completeness and up to-dateness of the information provided. The same applies to third-party websites to which www.agentur-baumeister.com refers by means of hyperlinks. Katrein Baumeister, Agentur Baumeister accepts no liability for the content of these websites.
+            </p>
+
+
+        </div>
+
+    </div>
+    <!--footer-->
+    <footer class="flex flex-col items-center justify-center gap-16 h-auto w-auto pt-10 mx-5 text-primary" id="contact">      
+      <!--vector-->
+      <div class="hidden md:flex md:w-1/2 place-content-center">
+        <img src="/images/Vector 7.svg">
+      </div>
+
+      <div class="flex flex-col gap-8 w-full md:flex-col lg:flex-row h-auto justify-evenly">
+          <!--left list card-->
+          <ul class="flex flex-col gap-8 w-full md:flex-row md:justify-between lg:justify-around">
+              <li>
+                  <p>Agentur Baumeister</br>
+                  Böckhstraße 13</br>
+                  10967 Berlin
+                  </p>
+              </li>
+              <li>
+                  <p>
+                      <span class="underline">@agentur-baumeister.com</span></br>
+                      +49 (0)30 - 490 827 87
+                  </p>
+              </li>
+          </ul>
+          <!--right list - mobile-->
+          <ul class="flex md:hidden lg:hidden w-full h-auto mb-20 justify-around">              
+            <li><a href="#">Datenschutz</a></li>
+            <li>
+                <a href="#">Impressum</br></a>                
+            </li>
+            <li>
+              LinkedIn
+            </li>
+            <li>
+              Instagram
+            </li>
+          </ul>
+
+          <!--right list card - medium & large screens-->
+          <ul class="hidden md:hidden lg:flex w-full h-auto mb-20 justify-around">              
+            <li>
+              LinkedIn
+            </li>
+            <li>
+              Instagram
+            </li>
+            <li class="text-right"><a href="#">
+              Impressum</br></a>                
+              Datenschutz</a>
+            </li>
+          </ul>
+        </div>
+    </footer>
+  </body>
+</html>
