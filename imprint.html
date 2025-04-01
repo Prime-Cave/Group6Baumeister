@@ -68,22 +68,17 @@
         checkWindowWidthAndInitialize();
       });
 
-      loadComponents('hero', 'src/sections/hero.html');
-      loadComponents('about', 'src/sections/about.html');
-      loadComponents('services', 'src/sections/services.html');
-      loadComponents('references', 'src/sections/references.html');
-      loadComponents('footer', 'src/sections/footer.html');
     };
     window.addEventListener('resize', checkWindowWidthAndInitialize);
   </script>
-  <body class="relative">
+  <body class="relative font-outfit bg-secondary">
     <div id="header" class="sticky top-0 z-50 text-primary"></div>    
-    <div class="pt-10 flex flex-col md:flex-row lg:flex-row mx-5 md:mx-10 lg:mx-40 xl:mx-40 xl:40 text-primary">
+    <div class="pt-10 flex flex-col md:flex-row mx-5 md:mx-10 lg:mx-40 xl:mx-40 xl:40 text-primary">
         <div class="flex flex-col flex-1 text-left gap-4 md:gap-16 text-xl md:text-2xl lg:text-4xl">
-            <p class="flex flex-col">
-                <span class="block md:hidden lg:hidden font-bold md:text-2xl">IMPRINT</span></br>
-                <span class="hidden md:block lg:block font-bold md:text-2xl">IMPRESSUM</span></br>
-                <span class="font-bold">Agentur Baumeister</span></br>
+            <p class="flex flex-col font-bold">
+                <span class="block md:hidden lg:hidden  md:text-2xl">IMPRINT</span></br>
+                <span class="hidden md:block lg:block  md:text-2xl">IMPRESSUM</span></br>
+                <span>Agentur Baumeister</span></br>
                 Katrein Baumeister</br>
                 Böckhstraße 13</br>
                 10967 Berlin

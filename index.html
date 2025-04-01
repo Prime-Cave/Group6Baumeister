@@ -64,8 +64,6 @@
           closeButton.classList.add('hidden');
           menuItems.classList.add('hidden');
         }
-      } else {
-        console.warn('Menu elements not found during width check.');
       }
     };
 
@@ -79,13 +77,9 @@
         loadComponents('footer', 'src/sections/footer.html'),
       ])
         .then(() => {
-          setTimeout(() => {
-            checkWindowWidthAndInitialize();
-
-            if (window.innerWidth < 1024) {
-              initializeMenu();
-            }
-          }, 100);
+          if (window.innerWidth < 1024) {
+            initializeMenu();
+          }
         })
         .catch((error) => {
           console.error('Error loading components:', error);
