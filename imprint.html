@@ -10,7 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
       rel="stylesheet"
     />
-    <title>Website project template</title>
+    <title>Baumeister website</title>
   </head>
   <script>
     const loadComponents = (id, url) => {
@@ -78,9 +78,7 @@
   </script>
   <body class="relative">
     <div id="header" class="sticky top-0 z-50 text-primary"></div>    
-    <!--imprint container-->
-    <div class="pt-10 flex flex-col md:flex-row lg:flex-row mx-5 md:mx-10 lg:mx-40 xl:mx-40 xl:40 text-primary border-4 border-red-400">
-        <!--left card-->
+    <div class="pt-10 flex flex-col md:flex-row lg:flex-row mx-5 md:mx-10 lg:mx-40 xl:mx-40 xl:40 text-primary">
         <div class="flex flex-col flex-1 text-left gap-4 md:gap-16 text-xl md:text-2xl lg:text-4xl">
             <p class="flex flex-col">
                 <span class="block md:hidden lg:hidden font-bold md:text-2xl">IMPRINT</span></br>
@@ -118,57 +116,45 @@
         </div>
 
     </div>
-    <!--footer-->
+  
     <footer class="flex flex-col items-center justify-center gap-16 h-auto w-auto pt-10 mx-5 text-primary" id="contact">      
-      <!--vector-->
+     
       <div class="hidden md:flex md:w-1/2 place-content-center">
         <img src="/images/Vector 7.svg">
       </div>
-
-      <div class="flex flex-col gap-8 w-full md:flex-col lg:flex-row h-auto justify-evenly">
-          <!--left list card-->
-          <ul class="flex flex-col gap-8 w-full md:flex-row md:justify-between lg:justify-around">
-              <li>
-                  <p>Agentur Baumeister</br>
-                  Böckhstraße 13</br>
-                  10967 Berlin
-                  </p>
-              </li>
-              <li>
-                  <p>
-                      <span class="underline">@agentur-baumeister.com</span></br>
-                      +49 (0)30 - 490 827 87
-                  </p>
-              </li>
-          </ul>
-          <!--right list - mobile-->
-          <ul class="flex md:hidden lg:hidden w-full h-auto mb-20 justify-around">              
-            <li><a href="#">Datenschutz</a></li>
-            <li>
-                <a href="#">Impressum</br></a>                
-            </li>
-            <li>
-              LinkedIn
-            </li>
-            <li>
-              Instagram
-            </li>
-          </ul>
-
-          <!--right list card - medium & large screens-->
-          <ul class="hidden md:hidden lg:flex w-full h-auto mb-20 justify-around">              
-            <li>
-              LinkedIn
-            </li>
-            <li>
-              Instagram
-            </li>
-            <li class="text-right"><a href="#">
-              Impressum</br></a>                
-              Datenschutz</a>
-            </li>
-          </ul>
+      <div
+      class="flex flex-col gap-8 w-full lg:flex-row h-auto justify-evenly lg:justify-between lg:text-2xl"
+    >
+      <ul
+        class="flex flex-col gap-8 w-full md:flex-row md:justify-between lg:justify-start lg:gap-52"
+      >
+        <li>
+          <p>Agentur Baumeister</p>
+          <p>Böckhstraße 13</p>
+          <p>10967 Berlin</p>
+        </li>
+        <li>
+          <p class="underline">hallo@agentur-baumeister.com</p>
+          <p>+49 (0)30 - 490 827 87</p>
+        </li>
+      </ul>
+  
+      <ul class="flex w-full justify-between">
+        <li class="order-3 md:order-1">LinkedIn</li>
+        <li class="order-4 md:order-2">Instagram</li>
+        <li class="order-2 md:order-3 lg:hidden">
+          <a href="/imprint.html">Impressum</a>
+        </li>
+        <li class="order-1 md:order-4 lg:hidden">
+          <a href="/privacy.html">Datenschutz</a>
+        </li>
+  
+        <div class="order-3 hidden lg:block">
+          <li class="text-right"><a href="/imprint.html">Impressum</a></li>
+          <li class="text-right"><a href="/privacy.html">Datenschutz</a></li>
         </div>
+      </ul>
+    </div>
     </footer>
   </body>
 </html>
