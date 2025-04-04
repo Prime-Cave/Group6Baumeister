@@ -1,31 +1,105 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/dist/output.css">
-    <title>Website project template</title>
-</head>
-<script>
-    const loadComponents = (id, url) =>  {
-        fetch(url)
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./dist/output.css" />
+    <title>Baumeister Website</title>
+  </head>
+  <script>
+    const loadComponents = (id, url) => {
+      return fetch(url)
         .then((response) => response.text())
         .then((html) => {
-            document.getElementById(id).innerHTML = html;
+          document.getElementById(id).innerHTML = html;
+          return html;
         });
-    }
+    };
+
+    const initializeMenu = () => {
+      const openButton = document.getElementById('open');
+      const closeButton = document.getElementById('close');
+      const menuItems = document.getElementById('menuItems');
+      const hero = document.getElementById('hero');
+      const heroText = document.getElementById('hero-text');
+
+      if (openButton && closeButton && menuItems && hero && heroText) {
+        function openMenu() {
+          openButton.classList.add('hidden');
+          closeButton.classList.remove('hidden');
+          menuItems.classList.remove('hidden');
+          hero.classList.add('mt-60');
+          heroText.classList.add('hidden');
+        }
+
+        function closeMenu() {
+          closeButton.classList.add('hidden');
+          openButton.classList.remove('hidden');
+          menuItems.classList.add('hidden');
+          hero.classList.remove('mt-60');
+          heroText.classList.remove('hidden');
+        }
+
+        openButton.addEventListener('click', openMenu);
+        closeButton.addEventListener('click', closeMenu);
+      } else {
+        setTimeout(initializeMenu, 100);
+      }
+    };
+
+    const checkWindowWidthAndInitialize = () => {
+      const openButton = document.getElementById('open');
+      const closeButton = document.getElementById('close');
+      const menuItems = document.getElementById('menuItems');
+
+      if (openButton && closeButton && menuItems) {
+        if (window.innerWidth < 1024) {
+          initializeMenu();
+          openButton.classList.remove('hidden');
+          closeButton.classList.add('hidden');
+          menuItems.classList.add('hidden');
+        } else {
+          openButton.classList.add('hidden');
+          closeButton.classList.add('hidden');
+          menuItems.classList.add('hidden');
+        }
+      }
+    };
 
     window.onload = () => {
-        loadComponents('header', 'src/sections/header.html');
-        loadComponents('hero', 'src/sections/hero.html');
-        loadComponents('contact', 'src/sections/contact.html');
-        loadComponents('footer', 'src/sections/footer.html');
-    }
-</script>
-<body>
-    <div id="header"></div>
+      Promise.all([
+        loadComponents('header', 'src/sections/header.html'),
+        loadComponents('hero', 'src/sections/hero.html'),
+        loadComponents('about', 'src/sections/about.html'),
+        loadComponents('services', 'src/sections/services.html'),
+        loadComponents('references', 'src/sections/references.html'),
+        loadComponents('footer', 'src/sections/footer.html'),
+      ])
+        .then(() => {
+          if (window.innerWidth < 1024) {
+            initializeMenu();
+          }
+        })
+        .catch((error) => {
+          console.error('Error loading components:', error);
+        });
+    };
+
+    window.addEventListener('resize', checkWindowWidthAndInitialize);
+  </script>
+  <body class="relative font-outfit bg-secondary w-screen overflow-x-hidden">
+    <div id="header" class="sticky top-0 z-50"></div>
     <div id="hero"></div>
-    <div id="contact"></div>
+    <div id="about" class="mt-20"></div>
+    <div id="services"></div>
+    <div id="references"></div>
     <div id="footer"></div>
-</body>
+  </body>
 </html>
