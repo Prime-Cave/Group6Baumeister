@@ -3,6 +3,12 @@ export default {
   content: ['./src/**/*.{html,js}', './*.html'],
   theme: {
     extend: {
+      height: {
+        1250: 1250,
+      },
+      fontFamily: {
+        outfit: 'Outfit, sans-serif',
+      },
       width: {
         quarter: '85%',
         'nine-tenths': '90%',
@@ -23,6 +29,9 @@ export default {
       },
       gridRowStart: {
         18: '18',
+        24: '24',
+        28: '28',
+        30: '30',
       },
       gridRowEnd: {
         15: '15',
